@@ -252,4 +252,51 @@ footer {
   background: linear-gradient(135deg, #fdf9ff, #f5f8fd);
   flex-wrap: wrap;
 }
+.contact-info-section {
+  background-color: #f4f4f4;
+  padding: 4rem 2rem;
+  text-align: center;
+}
 
+.contact-info-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-info-section h2 {
+  font-size: 2.5rem;
+  color: #222;
+  margin-bottom: 1rem;
+}
+
+.contact-info-section p {
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.contact-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 2rem;
+}
+
+.contact-box {
+  flex: 1 1 200px;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.contact-box h4 {
+  font-size: 1.2rem;
+  color: #28a745;
+  margin-bottom: 0.5rem;
+}
+
+.contact-box p {
+  font-size: 1rem;
+  color: #333;
+}
