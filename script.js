@@ -26,3 +26,8 @@ function scrollToBottom() {
     behavior: 'smooth'
   });
 }
+
+// Function to redirect to BookMyShow page
+function redirectToBookMyShow() {
+  window.open('https://in.bookmyshow.com/events/music-for-meals/ET00444205', '_blank');
+}
