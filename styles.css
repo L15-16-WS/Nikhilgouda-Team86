@@ -77,15 +77,15 @@ nav {
   position: relative;
 }
 
+/* Remove the clip-path from hero::after for seamless flow */
 .hero::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 120px;
-  background: #000000;
-  clip-path: polygon(0 60%, 25% 40%, 50% 50%, 75% 30%, 100% 40%, 100% 100%, 0 100%);
+  height: 80px;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.3) 50%, #000000 100%);
   z-index: 1;
 }
 
@@ -182,13 +182,15 @@ nav {
   }
 }
 
+/* Updated stats section with gradient background for seamless flow */
 .stats-section {
   padding: 5rem 2rem;
-  background: #000000;
+  background: linear-gradient(to bottom, #000000 0%, #1a1a1a 50%, #000000 100%);
   color: white;
   text-align: center;
   position: relative;
   overflow: hidden;
+  margin: 0;
 }
 
 .stats-section::before {
@@ -218,7 +220,7 @@ nav {
   font-size: 3rem;
   margin-bottom: 3rem;
   position: relative;
-  z-index: 2;
+  z-index: 2;  
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
@@ -311,143 +313,314 @@ nav {
   }
 }
 
-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #222;
-  color: white;
-  font-size: 0.9rem;
-}
-
+/* Updated benefits section for seamless connection */
 .benefits-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 4rem 2rem;
-  background: linear-gradient(135deg, #f5fcff, #f3f5f7);
-  flex-wrap: wrap;
-}
-
-.benefit-left {
-  flex: 1 1 45%;
-  max-width: 500px;
-}
-
-.benefit-left h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.benefit-left p {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-  color: #333;
-}
-
-.create-btn {
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
-  color: white;
-  background-color: #00c853;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.benefit-right {
-  flex: 1 1 40%;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, #000000, #1a1a1a);
+  flex-wrap: wrap;
+  gap: 3rem;
+  width: 100%;
+  min-height: 60vh;
+  position: relative;
+  margin: 0;
+}
+
+.benefits-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(229, 9, 20, 0.15) 0%, rgba(229, 9, 20, 0.05) 50%, transparent 100%);
+  pointer-events: none;
+}
+
+.benefit-left {
+  flex: 1 1 400px;
+  max-width: 600px;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.benefit-left h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #ffffff, #e50914);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.benefit-left p {
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+.benefit-left strong {
+  color: #e50914;
+  text-shadow: 0 0 10px rgba(229, 9, 20, 0.3);
+}
+
+.benefit-right {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
 }
 
 .price-box {
-  background: #1b2230;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   color: white;
-  padding: 2rem;
-  border-radius: 20px;
+  padding: 3rem 2.5rem;
+  border-radius: 25px;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  min-width: 280px;
+}
+
+.price-box::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(229, 9, 20, 0.1), transparent);
+  animation: rotate 6s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.price-box:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 25px 50px rgba(229, 9, 20, 0.2);
+  border-color: rgba(229, 9, 20, 0.4);
 }
 
 .main-price {
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: bold;
+  background: linear-gradient(135deg, #ffffff, #e50914);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  z-index: 2;
 }
 
 .plus {
-  font-size: 2rem;
-  margin: 0.5rem 0;
+  font-size: 2.5rem;
+  margin: 1rem 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+  position: relative;
+  z-index: 2;
 }
 
 .percentage {
-  font-size: 1.5rem;
-  background: #00c853;
+  font-size: 1.8rem;
+  background: linear-gradient(135deg, #e50914, #ff1744);
   color: white;
-  padding: 0.3rem 1rem;
-  border-radius: 25px;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
   display: inline-block;
-  margin: 0.5rem 0;
+  margin: 1rem 0;
+  font-weight: bold;
+  box-shadow: 0 8px 20px rgba(229, 9, 20, 0.3);
+  position: relative;
+  z-index: 2;
 }
 
 .price-box p {
-  margin: 0.5rem 0;
+  margin: 1rem 0;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  position: relative;
+  z-index: 2;
 }
 
 .price-box small {
-  font-size: 0.8rem;
-  color: #bbb;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  position: relative;
+  z-index: 2;
 }
 
-/* Features Section */
+/* Updated satisfaction section for seamless connection */
+.satisfaction-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, #1a1a1a, #000000);
+  flex-wrap: wrap;
+  gap: 3rem;
+  width: 100%;
+  min-height: 60vh;
+  position: relative;
+  margin: 0;
+}
 
+.satisfaction-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 70% 50%, rgba(229, 9, 20, 0.15) 0%, rgba(229, 9, 20, 0.05) 50%, transparent 100%);
+  pointer-events: none;
+}
+
+/* Updated Features Section - Why Choose Benik */
 .features-section {
   text-align: center;
-  padding: 4rem 2rem;
-  background: #fff;
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #000000 100%);
+  color: white;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.features-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(229, 9, 20, 0.08) 0%, transparent 70%);
+  animation: pulse 6s ease-in-out infinite;
+  pointer-events: none;
 }
 
 .features-section h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
+  font-size: 3.2rem;
+  margin-bottom: 4rem;
+  background: linear-gradient(135deg, #ffffff, #e50914);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: bold;
+  position: relative;
+  z-index: 2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .features {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 3rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
 .feature {
-  flex: 1 1 250px;
-  background: #f6f6f6;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  flex: 1 1 320px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 3rem 2.5rem;
+  border-radius: 25px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  max-width: 380px;
+}
+
+.feature::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(229, 9, 20, 0.05), transparent);
+  animation: rotate 8s linear infinite;
+  pointer-events: none;
+}
+
+.feature:hover {
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 25px 60px rgba(229, 9, 20, 0.2);
+  border-color: rgba(229, 9, 20, 0.4);
+}
+
+.feature::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.feature:hover::after {
+  left: 100%;
 }
 
 .feature h3 {
-  margin-bottom: 1rem;
-  color: #333;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, #ffffff, #e50914);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  z-index: 2;
+  text-shadow: none;
 }
 
 .feature p {
-  font-size: 0.95rem;
-  color: #555;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.7;
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  font-weight: 400;
 }
-.satisfaction-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 4rem 2rem;
-  background: linear-gradient(135deg, #fdf9ff, #f5f8fd);
-  flex-wrap: wrap;
-}
+
+/* Updated contact section for seamless connection */
 .contact-info-section {
-  background-color: #f4f4f4;
-  padding: 4rem 2rem;
+  background: linear-gradient(to bottom, #000000 0%, #1a1a1a 30%, #f4f4f4 100%);
+  padding: 5rem 2rem 4rem;
   text-align: center;
+  margin: 0;
 }
 
 .contact-info-container {
@@ -477,18 +650,100 @@ footer {
 .contact-box {
   flex: 1 1 200px;
   background: white;
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  padding: 2rem 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(229, 9, 20, 0.1);
+}
+
+.contact-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(229, 9, 20, 0.15);
+  border-color: rgba(229, 9, 20, 0.3);
 }
 
 .contact-box h4 {
   font-size: 1.2rem;
-  color: #28a745;
-  margin-bottom: 0.5rem;
+  color: #e50914;
+  margin-bottom: 0.8rem;
+  font-weight: bold;
 }
 
 .contact-box p {
   font-size: 1rem;
   color: #333;
+  margin: 0;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: linear-gradient(135deg, #222, #000);
+  color: white;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Mobile responsive improvements */
+@media (max-width: 768px) {
+  .benefits-section, .satisfaction-section {
+    flex-direction: column;
+    padding: 3rem 1rem;
+    gap: 2rem;
+    min-height: auto;
+  }
+  
+  .benefit-left {
+    text-align: center;
+    max-width: 100%;
+  }
+  
+  .benefit-left h2 {
+    font-size: 2.2rem;
+  }
+  
+  .benefit-left p {
+    font-size: 1.1rem;
+  }
+  
+  .price-box {
+    min-width: auto;
+    width: 100%;
+    max-width: 350px;
+    padding: 2.5rem 2rem;
+  }
+  
+  .main-price {
+    font-size: 3.5rem;
+  }
+  
+  .plus {
+    font-size: 2rem;
+  }
+  
+  .percentage {
+    font-size: 1.5rem;
+    padding: 0.6rem 1.5rem;
+  }
+  
+  .features-section {
+    padding: 4rem 1rem;
+  }
+  
+  .features-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  .feature {
+    flex: 1 1 100%;
+    padding: 2.5rem 2rem;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .feature h3 {
+    font-size: 1.6rem;
+  }
 }
